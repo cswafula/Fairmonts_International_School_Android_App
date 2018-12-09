@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Fairmonts International School</string>
+    <string name="app_name2">Fairmonts International School</string>
+    <string name="title_activity_homepage">Homepage</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_logout">Logout</string>
+    <string name="tab_text_1">Student Details</string>
+    <string name="tab_text_2">Order Items</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="info">Info</string>
+    <string name="profie_activity_name">Student Profile</string>
+    <string name="choose_activity">Choose Student Profile</string>
+    <string name="fairmonts_international_school">Fairmonts International School</string>
+</resources>

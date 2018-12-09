@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fees"
+    android:orientation="vertical"
+    android:background="@color/homepagebackground">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/FeesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_extralight"
+            android:textColor="@android:color/black"
+            android:text="Balance"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/Fees_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_extralight"
+            android:text="0.00"
+            android:textColor="@color/Splashscreen"
+            android:textSize="27sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/FeesLabel" />
+
+        <TextView
+            android:id="@+id/Fees_total_invoiced_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/nunito_extralight"
+            android:text="Total Invoiced"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/Fees_balance"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Fees_balance" />
+
+        <TextView
+            android:id="@+id/Fees_total_paid_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/nunito_extralight"
+            android:text="Total Paid"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/Fees_balance"
+            app:layout_constraintTop_toBottomOf="@+id/Fees_balance" />
+
+        <TextView
+            android:id="@+id/Fees_total_invoiced"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/nunito_extralight"
+            android:text="Total Paid"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/Fees_total_invoiced_label"
+            app:layout_constraintStart_toStartOf="@+id/Fees_total_invoiced_label"
+            app:layout_constraintTop_toBottomOf="@+id/Fees_total_invoiced_label" />
+
+        <TextView
+            android:id="@+id/Fees_total_paid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/nunito_extralight"
+            android:text="Total Paid"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/Fees_total_paid_label"
+            app:layout_constraintStart_toStartOf="@+id/Fees_total_paid_label"
+            app:layout_constraintTop_toBottomOf="@+id/Fees_total_paid_label" />
+
+    </android.support.constraint.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="10dp"
+        android:text="Fees Transactions Log"
+        android:fontFamily="@font/nunito_extralight"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/fees_logs_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+</LinearLayout>
