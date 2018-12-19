@@ -29,60 +29,61 @@ import java.util.List;
 
 import io.paperdb.Paper;
 
-public class children_profiles extends AppCompatActivity {
+public class Reports extends AppCompatActivity {
+
     RecyclerView recyclerView;
-    profileAdapter adapter;
-    List<profiles> profilesList;
+    ReportsAdapter adapter;
+    List<ReportsClass> reportsClassList;
 
     private static String FETCH_URL;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_children_profiles);
+        setContentView(R.layout.activity_reports);
 
         Paper.init(this);
-        String Parent_id= Paper.book().read("Parent_id").toString();
-        FETCH_URL="http://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchprofiles.php?parent_id="+Parent_id;
+        String admission_no=Paper.book().read("admission_no").toString();
+        FETCH_URL="http://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchreports.php?admission_no="+admission_no;
 
-
-        profilesList= new ArrayList<>();
-        recyclerView=findViewById(R.id.profiles_recyclerView);
+        reportsClassList= new ArrayList<>();
+        recyclerView=findViewById(R.id.Reports_Recycler);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         final ProgressDialog progressDialog=new ProgressDialog(this);
-        progressDialog.setMessage("Loading Children Profiles....");
+        progressDialog.setMessage("Fetching Reports");
         progressDialog.show();
 
         StringRequest stringRequest=new StringRequest(Request.Method.GET, FETCH_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
                         progressDialog.dismiss();
-                        try{
+
+                        try {
                             JSONObject jsonObject=new JSONObject(response);
-                            JSONArray jsonArray=jsonObject.getJSONArray("Student");
+                            JSONArray jsonArray=jsonObject.getJSONArray("Report");
 
                             for(int i=0 ; i<jsonArray.length();i++){
                                 JSONObject object=jsonArray.getJSONObject(i);
-                                profilesList.add(new profiles(object.getString("names"),object.getString("admission_no")
-                                        ,object.getString("level"),object.getString("system")));
+                                reportsClassList.add(new ReportsClass("Report Date: "+object.getString("date"),object.getString("report")));
                             }
 
-                            adapter=new profileAdapter(children_profiles.this,profilesList);
+                            adapter=new ReportsAdapter(Reports.this,reportsClassList);
                             recyclerView.setAdapter(adapter);
 
-
-                        }catch (JSONException e){
+                        } catch (JSONException e) {
                             Toast.makeText(getApplicationContext(), e.getMessage(),Toast.LENGTH_LONG).show();
                             e.printStackTrace();
                         }
+
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+
                 progressDialog.dismiss();
 
                 String message = null;
@@ -108,6 +109,5 @@ public class children_profiles extends AppCompatActivity {
 
         RequestQueue requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
-
     }
 }

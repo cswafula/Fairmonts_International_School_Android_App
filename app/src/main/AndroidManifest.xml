@@ -43,7 +43,21 @@
             android:name=".fees"
             android:label="Fees"
             android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".timetables"
+            android:label="Timetable"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".Health"
+            android:label="Health Information"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2" />
+        <activity android:name=".Reports"
             android:theme="@style/AppTheme2"
+            android:screenOrientation="portrait"
+            android:label="Student Reports"
             />
     </application>
 

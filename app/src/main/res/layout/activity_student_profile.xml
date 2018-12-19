@@ -16,14 +16,12 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="114dp"
-            android:layout_height="101dp"
+            android:layout_width="84dp"
+            android:layout_height="72dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:src="@drawable/ic_profile"
+            android:src="@drawable/fairmontslogo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +35,7 @@
             android:fontFamily="@font/nunito_extralight"
             android:textColor="@android:color/black"
             android:text="Student Name"
-            android:textSize="25sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -53,7 +51,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="2dp"
             android:fontFamily="@font/nunito_extralight"
             android:text="Admission_no"
             android:textColor="@android:color/black"
@@ -65,115 +63,346 @@
 
     </android.support.constraint.ConstraintLayout>
 
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="System Enrolled"
-            android:textColor="@android:color/black"
-            android:fontFamily="@font/nunito_extralight"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-        <TextView
-            android:id="@+id/Profile_student_system"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="British/ Kenyan"
-            android:textColor="@android:color/black"
-            android:fontFamily="@font/nunito_extralight"
-            android:textSize="18sp"
-            android:layout_marginBottom="5dp"/>
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout">
+                <TextView
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="System Enrolled"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:paddingStart="10dp"
+                    android:id="@+id/Profile_student_system"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="British/ Kenyan"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Student Level"
-            android:textColor="@android:color/black"
-            android:fontFamily="@font/nunito_extralight"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-        <TextView
-            android:id="@+id/Profile_student_level"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="level"
-            android:textColor="@android:color/black"
-            android:fontFamily="@font/nunito_extralight"
-            android:textSize="18sp"
-            android:layout_marginBottom="5dp"/>
-    </LinearLayout>
+                <TextView
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Student Class"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:paddingStart="10dp"
+                    android:id="@+id/Profile_student_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Class"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"/>
 
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout">
+                <TextView
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date of Birth"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:paddingStart="10dp"
+                    android:id="@+id/Profile_student_dob"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="dob"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fee Balance"
-            android:textColor="@android:color/black"
-            android:fontFamily="@font/nunito_extralight"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-        <TextView
-            android:id="@+id/Profile_student_fee_balance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="bal"
-            android:textColor="@android:color/black"
-            android:fontFamily="@font/nunito_extralight"
-            android:textSize="18sp"
-            android:layout_marginBottom="5dp"/>
-    </LinearLayout>
+                <TextView
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gender"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout">
+                <TextView
+                    android:paddingStart="10dp"
+                    android:id="@+id/Profile_student_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="gender"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gender"
-            android:textColor="@android:color/black"
-            android:fontFamily="@font/nunito_extralight"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-        <TextView
-            android:id="@+id/Profile_student_gender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="gender"
-            android:textColor="@android:color/black"
-            android:fontFamily="@font/nunito_extralight"
-            android:textSize="18sp"
-            android:layout_marginBottom="5dp"/>
-    </LinearLayout>
+                <TextView
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Home Address"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
+                <TextView
+                    android:paddingStart="10dp"
+                    android:id="@+id/Profile_student_home_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="home"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"/>
 
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/backgroundcolor"
+                    android:text="Parents Details"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:padding="10dp"
+                    android:textSize="20sp"/>
 
+                <TextView
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/parent_s_name"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
+                <TextView
+                    android:paddingStart="10dp"
+                    android:id="@+id/Profile_student_parent_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="name"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_parent_s_name"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:paddingStart="10dp"
+                    android:id="@+id/Profile_student_other_parent_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="name"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/parent_s_id_no"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:paddingStart="10dp"
+                    android:id="@+id/Profile_student_parent_id_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_parent_s_id_no"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:paddingStart="10dp"
+                    android:id="@+id/Profile_student_other_parent_id_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/parent_s_contact"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:paddingStart="10dp"
+                    android:id="@+id/Profile_student_parent_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_parent_s_contact"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:paddingStart="10dp"
+                    android:id="@+id/Profile_student_other_parent_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/backgroundcolor"
+                    android:text="@string/guardian_s_details"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:padding="10dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorWhite"
+                    />
+
+                <TextView
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/guardian_s_name"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:paddingStart="10dp"
+                    android:id="@+id/Profile_student_guardian_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/guardian_s_contact"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:paddingStart="10dp"
+                    android:id="@+id/Profile_student_guardian_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/guardian_s_id_no"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:paddingStart="10dp"
+                    android:id="@+id/Profile_student_guardian_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/nunito_extralight"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="15dp"/>
+
+            </LinearLayout>
+
+        </ScrollView>
 </LinearLayout>

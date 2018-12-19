@@ -4,6 +4,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -45,8 +47,7 @@ import io.paperdb.Paper;
 public class Homepage extends AppCompatActivity {
 
     String admission_no;
-    public static String FETCH_URL;
-    public static String BALANCE_URL;
+
     boolean doubleBackToExitPressedOnce = false;
 
     /**
@@ -87,114 +88,13 @@ public class Homepage extends AppCompatActivity {
         Paper.init(this);
         Intent intent=getIntent();
         admission_no=intent.getStringExtra("admission_no");
-        FETCH_URL="http://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchsingleprofile.php?admission_no="+admission_no;
-        BALANCE_URL="http://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchfees.php?admission_no="+admission_no;
-        fetchprofile();
-        fetchfeebalance();
+        Paper.book().write("admission_no",admission_no);
+
+
+
 
     }
 
-    private void fetchprofile() {
-        final JsonObjectRequest jsonObjectRequest= new JsonObjectRequest(Request.Method.GET, FETCH_URL,
-                null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    JSONArray jsonArray= response.getJSONArray("child");
-                    String Sno= jsonArray.get(0).toString();
-                    String names= jsonArray.get(1).toString();
-                    String fees_id= jsonArray.get(3).toString();
-                    String level= jsonArray.get(4).toString();
-                    String system= jsonArray.get(5).toString();
-                    String gender= jsonArray.get(6).toString();
-                    Paper.book().write("admission_no",admission_no);
-                    Paper.book().write("names",names);
-                    Paper.book().write("fees_id",fees_id);
-                    Paper.book().write("level",level);
-                    Paper.book().write("system",system);
-                    Paper.book().write("gender",gender);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                String message = null;
-                if (error instanceof NetworkError) {
-                    message = "Cannot connect to Internet...Please check your connection!";
-                } else if (error instanceof ServerError) {
-                    message = "The server could not be found. Please try again after some time!!";
-                } else if (error instanceof AuthFailureError) {
-                    message = "Cannot connect to Internet...Please check your connection!";
-                } else if (error instanceof ParseError) {
-                    message = "Invalid Credentials! Please try again!!";
-                } else if (error instanceof NoConnectionError) {
-                    message = "Cannot connect to Internet...Please check your connection!";
-                } else if (error instanceof TimeoutError) {
-                    message = "Connection TimeOut! Please check your internet connection.";
-                }else{
-                    Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_LONG).show();
-                }
-                Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
-            }
-        });
-        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(
-                5000,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        RequestQueue requestQueue= Volley.newRequestQueue(this);
-        requestQueue.add(jsonObjectRequest);
-    }
-
-    private void fetchfeebalance() {
-        final JsonObjectRequest jsonObjectRequest2= new JsonObjectRequest(Request.Method.GET, BALANCE_URL,
-                null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    JSONArray jsonArray2= response.getJSONArray("child");
-                    String balance= jsonArray2.get(0).toString();
-                    String total_invoiced= jsonArray2.get(1).toString();
-                    String total_paid= jsonArray2.get(2).toString();
-                    String fees_id= jsonArray2.get(3).toString();
-                    Paper.book().write("balance",balance);
-                    Paper.book().write("total_invoiced",total_invoiced);
-                    Paper.book().write("total_paid",total_paid);
-                    Paper.book().write("fees_id",fees_id);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                String message = null;
-                if (error instanceof NetworkError) {
-                    message = "Cannot connect to Internet...Please check your connection!";
-                } else if (error instanceof ServerError) {
-                    message = "The server could not be found. Please try again after some time!!";
-                } else if (error instanceof AuthFailureError) {
-                    message = "Cannot connect to Internet...Please check your connection!";
-                } else if (error instanceof ParseError) {
-                    message = "Invalid Credentials! Please try again!!";
-                } else if (error instanceof NoConnectionError) {
-                    message = "Cannot connect to Internet...Please check your connection!";
-                } else if (error instanceof TimeoutError) {
-                    message = "Connection TimeOut! Please check your internet connection.";
-                }else{
-                    Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_LONG).show();
-                }
-                Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
-            }
-        });
-        jsonObjectRequest2.setRetryPolicy(new DefaultRetryPolicy(
-                5000,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        RequestQueue requestQueue= Volley.newRequestQueue(this);
-        requestQueue.add(jsonObjectRequest2);
-    }
 
 
     @Override
@@ -212,6 +112,8 @@ public class Homepage extends AppCompatActivity {
 
         switch(item.getItemId()){
             case R.id.action_switch:
+                String empty="";
+                Paper.book().write("admission_no",empty);
                 startActivity(new Intent(Homepage.this,children_profiles.class));
                 finish();
                 break;
@@ -249,7 +151,7 @@ public class Homepage extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
 
-            final ConstraintLayout Profiler,Fee,Reports,Timetables,Diets,Healths,logout;
+            final ConstraintLayout Profiler,Fee,Reports,Timetables,info,Healths,logout;
             View rootView=null;
             switch(getArguments().getInt(ARG_SECTION_NUMBER)){
                 case 1:
@@ -259,9 +161,44 @@ public class Homepage extends AppCompatActivity {
                     Fee= rootView.findViewById(R.id.Btn_Home_tab_Fees);
                     Reports= rootView.findViewById(R.id.Btn_Home_tab_Reports);
                     Timetables= rootView.findViewById(R.id.Btn_Home_tab_Timetable);
-                    Diets= rootView.findViewById(R.id.Btn_Home_tab_Diet);
                     Healths= rootView.findViewById(R.id.Btn_Home_tab_Health);
                     logout= rootView.findViewById(R.id.Btn_Home_tab_Logout);
+                    info=rootView.findViewById(R.id.Btn_Info);
+
+                    Reports.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startActivity(new Intent(getContext(),Reports.class));
+                        }
+                    });
+
+                    info.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            final android.support.v7.app.AlertDialog.Builder builder= new android.support.v7.app.AlertDialog.Builder(getContext());
+                            builder.setMessage("Fairmonts International School \n\n Version 1.0.0 " +
+                                    "\n");
+                            builder.setIcon(R.drawable.fairmontslogo);
+                            builder.setTitle("Application Information");
+                            builder.setCancelable(true);
+                            android.support.v7.app.AlertDialog alertDialog= builder.create();
+                            alertDialog.show();
+                        }
+                    });
+
+                    Healths.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startActivity(new Intent(getContext(),Health.class));
+                        }
+                    });
+
+                    Timetables.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startActivity(new Intent(getContext(), timetables.class));
+                        }
+                    });
 
                     Profiler.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -275,6 +212,8 @@ public class Homepage extends AppCompatActivity {
                             final android.support.v7.app.AlertDialog.Builder builder= new android.support.v7.app.AlertDialog.Builder(getContext());
                             builder.setMessage("Are you sure you want to Logout?");
                             builder.setCancelable(true);
+                            builder.setIcon(R.drawable.fairmontslogo);
+                            builder.setTitle("Logout");
                             builder.setNegativeButton("No, Stay!", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {

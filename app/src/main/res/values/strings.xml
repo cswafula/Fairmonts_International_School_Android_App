@@ -20,4 +20,16 @@
     <string name="profie_activity_name">Student Profile</string>
     <string name="choose_activity">Choose Student Profile</string>
     <string name="fairmonts_international_school">Fairmonts International School</string>
+    <string name="other_parent_s_contact">Other Parent\'s Contact</string>
+    <string name="contact">contact</string>
+    <string name="parent_s_contact">Parent\'s Contact</string>
+    <string name="number">number</string>
+    <string name="other_parent_s_id_no">Other Parent\'s ID no</string>
+    <string name="parent_s_id_no">Parent\'s ID no</string>
+    <string name="other_parent_s_name">Other Parent\'s Name</string>
+    <string name="parent_s_name">Parent\'s Name</string>
+    <string name="guardian_s_details">Guardian\'s Details</string>
+    <string name="guardian_s_name">Guardian\'s Name</string>
+    <string name="guardian_s_contact">Guardian\'s Contact</string>
+    <string name="guardian_s_id_no">Guardian\'s ID no</string>
 </resources>

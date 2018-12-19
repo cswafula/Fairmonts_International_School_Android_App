@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkError;
 import com.android.volley.NoConnectionError;
 import com.android.volley.ParseError;
@@ -18,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.ServerError;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -38,6 +40,7 @@ public class fees extends AppCompatActivity {
     TextView balance,total_invoiced, total_paid;
 
     private static String FETCH_URL;
+    public static String BALANCE_URL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,16 +52,12 @@ public class fees extends AppCompatActivity {
         total_paid=findViewById(R.id.Fees_total_paid);
 
         Paper.init(this);
-        String Fees_balance,Fees_total_invoiced, Fees_total_paid,Fees_id;
-        Fees_balance=Paper.book().read("balance").toString();
-        Fees_total_invoiced=Paper.book().read("total_invoiced").toString();
-        Fees_total_paid=Paper.book().read("total_paid").toString();
-        Fees_id=Paper.book().read("fees_id").toString();
-        FETCH_URL="http://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchfeesrecords.php?fees_id="+Fees_id;
+        String admission_no;
+        admission_no=Paper.book().read("admission_no").toString();
+        FETCH_URL="http://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchfeesrecords.php?admission_no="+admission_no;
+        BALANCE_URL="http://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchfees.php?admission_no="+admission_no;
 
-        balance.setText("KES "+Fees_balance);
-        total_invoiced.setText("KES "+Fees_total_invoiced);
-        total_paid.setText("KES "+Fees_total_paid);
+        fetchfeebalance();
 
         feesClassList = new ArrayList<>();
         recyclerView=findViewById(R.id.fees_logs_recycler);
@@ -123,4 +122,52 @@ public class fees extends AppCompatActivity {
         requestQueue.add(stringRequest);
 
     }
+
+    private void fetchfeebalance() {
+        final JsonObjectRequest jsonObjectRequest2= new JsonObjectRequest(Request.Method.GET, BALANCE_URL,
+                null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONArray jsonArray2= response.getJSONArray("child");
+                    String Balance= jsonArray2.get(0).toString();
+                    String Total_invoiced= jsonArray2.get(1).toString();
+                    String Total_paid= jsonArray2.get(2).toString();
+                    balance.setText("KES "+Balance);
+                    total_invoiced.setText("KES "+Total_invoiced);
+                    total_paid.setText("KES "+Total_paid);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                String message = null;
+                if (error instanceof NetworkError) {
+                    message = "Cannot connect to Internet...Please check your connection!";
+                } else if (error instanceof ServerError) {
+                    message = "The server could not be found. Please try again after some time!!";
+                } else if (error instanceof AuthFailureError) {
+                    message = "Cannot connect to Internet...Please check your connection!";
+                } else if (error instanceof ParseError) {
+                    message = "Invalid Credentials! Please try again!!";
+                } else if (error instanceof NoConnectionError) {
+                    message = "Cannot connect to Internet...Please check your connection!";
+                } else if (error instanceof TimeoutError) {
+                    message = "Connection TimeOut! Please check your internet connection.";
+                }else{
+                    Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_LONG).show();
+                }
+                Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
+            }
+        });
+        jsonObjectRequest2.setRetryPolicy(new DefaultRetryPolicy(
+                5000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(jsonObjectRequest2);
+    }
+
 }

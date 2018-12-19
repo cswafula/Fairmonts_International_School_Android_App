@@ -24,13 +24,12 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="60dp"
-                android:layout_height="59dp"
+                android:layout_width="57dp"
+                android:layout_height="61dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:padding="4dp"
-                android:src="@drawable/fairmontslogo"
-                />
+                android:src="@drawable/fairmontslogo" />
 
             <TextView
                 android:id="@+id/fees_date"

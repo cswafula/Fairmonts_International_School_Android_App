@@ -11,68 +11,52 @@
         android:background="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp">
 
         <RelativeLayout
-            android:id="@+id/select_child_profile"
+            android:id="@+id/select_student_report"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp">
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="60dp"
-                android:layout_height="59dp"
+                android:layout_width="57dp"
+                android:layout_height="61dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:padding="4dp"
-                android:src="@drawable/fairmontslogo"
-                />
+                android:src="@drawable/fairmontslogo" />
 
             <TextView
-                android:id="@+id/profile_studentName"
+                android:id="@+id/Student_report_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
                 android:layout_toEndOf="@id/imageView"
                 android:fontFamily="@font/nunito_extralight"
-                android:text="Student Name"
+                android:text="Report Date: 0000-00-00"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/profile_studentGrade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/profile_studentName"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="4dp"
+                android:layout_below="@id/Student_report_date"
+                android:layout_marginStart="5dp"
                 android:layout_toEndOf="@id/imageView"
                 android:fontFamily="@font/nunito_extralight"
-                android:text="Student level"
+                android:text="View Report"
                 android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/profile_studentSystem"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/profile_studentGrade"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="4dp"
-                android:layout_toEndOf="@id/imageView"
-                android:fontFamily="@font/nunito_extralight"
-                android:text="System"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:drawableRight="@drawable/ic_view"/>
 
 
         </RelativeLayout>
