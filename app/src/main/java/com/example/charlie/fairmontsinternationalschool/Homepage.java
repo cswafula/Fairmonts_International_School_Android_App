@@ -151,7 +151,7 @@ public class Homepage extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
 
-            final ConstraintLayout Profiler,Fee,Reports,Timetables,info,Healths,logout;
+            final ConstraintLayout Profiler,Fee,Reports,Timetables,info,Healths,logout,attendance;
             View rootView=null;
             switch(getArguments().getInt(ARG_SECTION_NUMBER)){
                 case 1:
@@ -164,6 +164,15 @@ public class Homepage extends AppCompatActivity {
                     Healths= rootView.findViewById(R.id.Btn_Home_tab_Health);
                     logout= rootView.findViewById(R.id.Btn_Home_tab_Logout);
                     info=rootView.findViewById(R.id.Btn_Info);
+                    attendance=rootView.findViewById(R.id.Btn_Home_tab_Attendance);
+
+
+                    attendance.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startActivity(new Intent(getContext(),Attendance.class));
+                        }
+                    });
 
                     Reports.setOnClickListener(new View.OnClickListener() {
                         @Override

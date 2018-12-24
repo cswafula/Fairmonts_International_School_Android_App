@@ -7,6 +7,17 @@
     tools:context=".children_profiles"
     android:background="@color/homepagebackground">
 
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="No records found!!"
+        android:textSize="18sp"
+        android:fontFamily="@font/nunito_extralight"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
     <android.support.v7.widget.RecyclerView
         android:layout_marginTop="4dp"
         android:id="@+id/profiles_recyclerView"

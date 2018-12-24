@@ -54,11 +54,17 @@
             android:label="Health Information"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2" />
-        <activity android:name=".Reports"
-            android:theme="@style/AppTheme2"
-            android:screenOrientation="portrait"
+        <activity
+            android:name=".Reports"
             android:label="Student Reports"
-            />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".Attendance"
+            android:label="Attendance"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2" />
+        <activity android:name=".Attendance2"></activity>
     </application>
 
 </manifest>

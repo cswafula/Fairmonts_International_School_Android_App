@@ -5,8 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Reports"
+    tools:context=".Attendance"
     android:background="@color/homepagebackground">
+
 
     <TextView
         android:layout_marginTop="10dp"
@@ -21,7 +22,7 @@
 
     <android.support.v7.widget.RecyclerView
         android:layout_marginTop="4dp"
-        android:id="@+id/Reports_Recycler"
+        android:id="@+id/Attendance_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
