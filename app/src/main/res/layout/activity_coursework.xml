@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Coursework"
+    android:orientation="vertical"
+    android:background="@color/homepagebackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:background="@color/homepagebackground">
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/Coursework_year"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            />
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/Coursework_term"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/Coursework_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimarys"
+        android:text="Filter"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:textColor="@android:color/white"
+        android:padding="10dp"
+        app:fontFamily="@font/nunito_extralight"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/Coursework_no_exams_found"
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="Sorry, No Exams found. Try again."
+        android:textSize="20sp"
+        android:fontFamily="@font/nunito_extralight"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@color/homepagebackground"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="5dp"
+        android:id="@+id/Coursework_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/homepagebackground"/>
+
+</LinearLayout>

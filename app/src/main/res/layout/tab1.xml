@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -120,7 +120,7 @@
                 android:weightSum="2">
 
                 <android.support.constraint.ConstraintLayout
-                    android:id="@+id/Btn_Home_tab_Reports"
+                    android:id="@+id/Btn_Home_tab_coursework"
                     android:layout_width="0dp"
                     android:layout_height="120dp"
                     android:layout_marginBottom="8dp"
@@ -141,7 +141,7 @@
                         android:layout_marginRight="8dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/ic_report"
+                        android:src="@drawable/ic_coursework"
                         android:tint="@color/colorIcons"
                         app:layout_constraintBottom_toTopOf="@+id/textView2"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -155,7 +155,7 @@
                         android:background="@color/colorWhiteDark"
                         android:fontFamily="@font/nunito_extralight"
                         android:gravity="center"
-                        android:text="Reports"
+                        android:text="Coursework"
                         android:textColor="@color/colorIcons"
                         android:textSize="20dp"
                         android:textStyle="bold"
@@ -263,7 +263,7 @@
                 </android.support.constraint.ConstraintLayout>
 
                 <android.support.constraint.ConstraintLayout
-                    android:id="@+id/Btn_Home_tab_Health"
+                    android:id="@+id/Btn_Home_tab_diary"
                     android:layout_width="0dp"
                     android:layout_height="120dp"
                     android:layout_marginBottom="8dp"
@@ -284,7 +284,7 @@
                         android:layout_marginRight="8dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/ic_health"
+                        android:src="@drawable/ic_diary"
                         android:tint="@color/colorIcons"
                         app:layout_constraintBottom_toTopOf="@+id/textView8"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -298,7 +298,7 @@
                         android:background="@color/colorWhiteDark"
                         android:fontFamily="@font/nunito_extralight"
                         android:gravity="center"
-                        android:text="Health"
+                        android:text="Diary"
                         android:textColor="@color/colorIcons"
                         android:textSize="20dp"
                         android:textStyle="bold"
@@ -413,4 +413,4 @@
 
     </ScrollView>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

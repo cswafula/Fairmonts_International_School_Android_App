@@ -12,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
         android:layout_marginBottom="4dp">
 
         <RelativeLayout
@@ -32,14 +32,27 @@
                 android:src="@drawable/fairmontslogo" />
 
             <TextView
-                android:id="@+id/Student_report_date"
-                android:layout_width="match_parent"
+                android:id="@+id/date_label_diary"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_toEndOf="@id/imageView"
                 android:fontFamily="@font/nunito_extralight"
-                android:text="Report Date: 0000-00-00"
+                android:text="Diary Date: "
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/Student_report_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/date_label_diary"
+                android:fontFamily="@font/nunito_extralight"
+                android:text="0000-00-00"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"/>

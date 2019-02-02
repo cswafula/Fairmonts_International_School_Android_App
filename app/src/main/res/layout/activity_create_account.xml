@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateAccount"
+    android:background="@color/backgroundcolor">
+
+    <TextView
+        android:id="@+id/Account_Welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:text="Choose a Password"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/nunito_extralight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Account_Welcome_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:padding="10dp"
+        android:text="Your Password must be 6 or more characters long. In case you forget your password, kindly contact the school administrator."
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:fontFamily="@font/nunito_extralight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Account_Welcome" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/Account_Welcome_text"
+        >
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/Account_Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/nunito_extralight"
+            android:hint="Enter Password"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:met_baseColor="@android:color/white"
+            app:met_errorColor="@android:color/holo_red_light"
+            app:met_floatingLabel="highlight"
+            app:met_iconLeft="@mipmap/icpass"
+            app:met_maxCharacters="25"
+            app:met_primaryColor="@android:color/white"
+            tools:fontFamily="@font/nunito_extralight" />
+
+        <ImageView
+            android:id="@+id/AccountShowPassword"
+            android:layout_marginEnd="20dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_visibility_on"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/Account_finish"
+        android:drawableRight="@drawable/ic_view"
+        android:drawableTint="@color/colorWhite"
+        android:gravity="end"
+        android:paddingEnd="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:padding="10dp"
+        android:text="Finish"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/nunito_extralight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</android.support.constraint.ConstraintLayout>

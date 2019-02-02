@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExamMarks"
+    android:orientation="vertical"
+    android:background="@color/homepagebackground">
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/Exam_marks_none_found"
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="No Student results found!"
+        android:textSize="20sp"
+        android:fontFamily="@font/nunito_extralight"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@color/homepagebackground"/>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/Exam_marks_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

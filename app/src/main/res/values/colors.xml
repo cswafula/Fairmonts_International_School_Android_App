@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#5e1811</color>
+    <color name="colorPrimary">#4d140e</color>
+    <color name="colorPrimarys">#5e1710</color>
+    <color name="colorPrimarys2">#5e1811</color>
     <color name="backgroundcolor">#5e1811</color>
     <color name="backgroundcolorprofile">#4b0c05</color>
-    <color name="colorPrimaryDark">#323233</color>
+    <color name="colorPrimaryDark">#060606</color>
     <color name="Splashscreen">#D61D18</color>
-    <color name="colorAccent">#bfbfbf</color>
+    <color name="colorAccent">#5e1710</color>
+    <color name="colorAccent22">#bfbfbf</color>
     <color name="homepagebackground">#d9d6d7</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="tablecolor1">#C0BDC0</color>
     <color name="tablecolor2">#2A232B</color>
     <color name="colorAqua">#CCCCCC</color>
-    <color name="colorIcons">#5e1811</color>
+    <color name="colorIcons">#5e1710</color>
+    <color name="colorIcons2">#5e1811</color>
     <color name="colorWhiter">#ffffff</color>
     <color name="colorWhiteDark">#f7f7f7</color>
 

@@ -1,28 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Reports"
-    android:background="@color/homepagebackground">
+    android:background="@color/homepagebackground"
+    android:orientation="vertical"
+    tools:context=".Reports">
 
     <TextView
-        android:layout_marginTop="10dp"
+        android:id="@+id/Diary_previous_reports"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:text="No records found!!"
-        android:textSize="18sp"
+        android:drawableRight="@drawable/ic_view"
         android:fontFamily="@font/nunito_extralight"
+        android:gravity="end"
+        android:padding="5dp"
+        android:text="Previous Reports"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:gravity="center"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/Diary_search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Diary_previous_reports">
+
+        <TextView
+            android:id="@+id/Diary_search_close"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:drawableRight="@drawable/ic_close"
+            android:fontFamily="@font/nunito_extralight"
+            android:gravity="end"
+            android:paddingStart="10dp"
+            android:text="close"
+            android:textColor="@color/backgroundcolor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/Diary_Start_date_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimarys"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="From"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/nunito_extralight" />
+
+            <TextView
+                android:id="@+id/Diary_Start_date_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="0000-00-00"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/nunito_extralight" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/Diary_End_date_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimarys"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="To"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/nunito_extralight" />
+
+            <TextView
+                android:id="@+id/Diary_End_date_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="0000-00-00"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/nunito_extralight" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/Diary_filter_dates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorPrimarys"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Filter"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/nunito_extralight" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/Diary_no_reports"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/nunito_extralight"
+        android:gravity="center_horizontal"
+        android:paddingStart="10dp"
+        android:text="No Reports Recorded!"
+        android:textColor="@color/backgroundcolor"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Diary_search_layout" />
 
     <android.support.v7.widget.RecyclerView
-        android:layout_marginTop="4dp"
-        android:id="@+id/Reports_Recycler"
+        android:id="@+id/Diary_Recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Diary_no_reports" />
 
-</RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:visibility="gone"
+        android:id="@+id/Diary_Recyclerview_all_search"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Diary_no_reports" />
+
+
+</android.support.constraint.ConstraintLayout>

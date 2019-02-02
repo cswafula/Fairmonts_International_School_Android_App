@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="57dp"
+                android:layout_height="61dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="4dp"
+                android:src="@drawable/fairmontslogo" />
+
+            <TextView
+                android:id="@+id/Exam_marks_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/imageView"
+                android:fontFamily="@font/nunito_extralight"
+                android:text="Subject"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+
+
+            <TextView
+                android:id="@+id/Exam_marks_marks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Exam_marks_subject"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/imageView"
+                android:fontFamily="@font/nunito_extralight"
+                android:text="Marks"
+                android:textColor="@color/backgroundcolor"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp" />
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

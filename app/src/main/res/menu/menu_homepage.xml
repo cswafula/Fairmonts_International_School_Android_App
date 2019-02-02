@@ -1,7 +1,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.charlie.fairmontsinternationalschool.Homepage">
+    tools:context="com.fairmontsinternationalschool.charlie.fairmontsinternationalschool.Homepage">
+
+    <!--<item-->
+        <!--android:id="@+id/action_alert"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:title="Alerts"-->
+        <!--app:showAsAction="always"-->
+        <!--android:icon="@drawable/ic_message"/>-->
+
     <item
         android:id="@+id/action_switch"
         android:orderInCategory="100"

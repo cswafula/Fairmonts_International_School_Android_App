@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.charlie.fairmontsinternationalschool">
+    package="com.fairmontsinternationalschool.charlie.fairmontsinternationalschool">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/fairmontslogo"
-        android:label="@string/app_name"
+        android:label="@string/app_name2"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -16,9 +16,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Homepage"
-            android:label="Fairmonts International School"
+            android:label="MyFairmont"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme2" />
         <activity
             android:name=".StudentProfile"
             android:label="@string/profie_activity_name"
@@ -56,7 +56,7 @@
             android:theme="@style/AppTheme2" />
         <activity
             android:name=".Reports"
-            android:label="Student Reports"
+            android:label="Student Diary"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2" />
         <activity
@@ -64,7 +64,30 @@
             android:label="Attendance"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2" />
-        <activity android:name=".NewAttendance"></activity>
+        <activity
+            android:name=".Coursework"
+            android:label="Coursework"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".ExamMarks"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".ParentComment"
+            android:label="Comment on Student Diary"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".Introduction"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CreatePassword"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CreateAccount"
+            android:screenOrientation="portrait"
+            />
     </application>
 
 </manifest>

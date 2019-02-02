@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ParentComment"
+    android:background="@color/homepagebackground">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/Comment_date_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="0000-00-00"
+                android:textColor="@color/colorPrimarys"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/nunito_extralight" />
+
+            <TextView
+                android:id="@+id/Comment_notes_label"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimarys"
+                android:fontFamily="@font/nunito_extralight"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/Comment_date_text"
+                android:text="Diary Notes"/>
+
+            <TextView
+                android:id="@+id/Comment_notes_text"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:fontFamily="@font/nunito_extralight"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@+id/Comment_notes_label"
+                android:text="Notes"/>
+
+
+
+            <TextView
+                android:id="@+id/Comment_teacher_label"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimarys"
+                android:fontFamily="@font/nunito_extralight"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/Comment_notes_text"
+                android:text="Teacher's Comments"/>
+
+            <TextView
+                android:id="@+id/Comment_teacher_text"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:fontFamily="@font/nunito_extralight"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@+id/Comment_teacher_label"
+                android:text="Comments"/>
+
+            <TextView
+                android:id="@+id/Comment_parents_label"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimarys"
+                android:fontFamily="@font/nunito_extralight"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/Comment_teacher_text"
+                android:text="Parent's Comments"/>
+
+            <EditText
+                android:id="@+id/Comment_text"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="2dp"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:gravity="top"
+                android:hint="Enter Comments"
+                android:padding="20dp"
+                android:textSize="16sp"
+                app:fontFamily="@font/nunito_extralight"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Comment_parents_label" />
+
+            <Button
+                android:visibility="gone"
+                android:id="@+id/Comment_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@color/backgroundcolor"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Save Comment"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/nunito_extralight"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Comment_text" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".children_profiles"
-    android:background="@color/homepagebackground">
+    android:background="@color/homepagebackground"
+    android:orientation="vertical">
 
     <TextView
-        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:id="@+id/Profiles_no_records_found"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
@@ -18,10 +21,28 @@
         android:textStyle="bold"
         android:gravity="center"/>
 
+    <Button
+        android:visibility="gone"
+        android:id="@+id/Profiles_refresh_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="@android:color/black"
+        android:padding="10dp"
+        android:text="Refresh"
+        app:fontFamily="@font/nunito_extralight"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textAllCaps="false" />
+
     <android.support.v7.widget.RecyclerView
         android:layout_marginTop="4dp"
         android:id="@+id/profiles_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-</RelativeLayout>
+</LinearLayout>

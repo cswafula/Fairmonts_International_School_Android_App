@@ -40,13 +40,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/LoginEmail"
+            android:id="@+id/LoginPhoneNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito_extralight"
             android:layout_marginRight="10dp"
-            android:hint="Enter Email address"
-            android:inputType="textEmailAddress"
+            android:hint="Enter Phone Number"
+            android:inputType="number"
             app:met_baseColor="@android:color/white"
             app:met_errorColor="@android:color/holo_red_light"
             app:met_floatingLabel="highlight"
@@ -55,28 +55,44 @@
             app:met_primaryColor="@android:color/white"
             tools:fontFamily="@font/nunito_extralight" />
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/LoginPassword"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_extralight"
-            android:hint="Enter Password"
-            android:inputType="textPassword"
-            app:met_baseColor="@android:color/white"
-            app:met_errorColor="@android:color/holo_red_light"
-            app:met_floatingLabel="highlight"
-            app:met_iconLeft="@mipmap/icpass"
-            app:met_maxCharacters="15"
-            app:met_primaryColor="@android:color/white"
-            tools:fontFamily="@font/nunito_extralight" />
+            android:layout_height="wrap_content">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/LoginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nunito_extralight"
+                android:hint="Enter Password"
+                android:inputType="textPassword"
+                app:met_baseColor="@android:color/white"
+                app:met_errorColor="@android:color/holo_red_light"
+                app:met_floatingLabel="highlight"
+                app:met_iconLeft="@mipmap/icpass"
+                app:met_maxCharacters="15"
+                app:met_primaryColor="@android:color/white"
+                tools:fontFamily="@font/nunito_extralight" />
+
+            <ImageView
+                android:id="@+id/LoginShowPassword"
+                android:layout_marginRight="10dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_visibility_on"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
 
         <Button
             android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
             android:background="@android:color/white"
             android:gravity="center"
             android:layout_marginRight="10dp"
@@ -97,11 +113,11 @@
             android:layout_marginTop="15dp"/>
 
         <TextView
-            android:id="@+id/ForgotPassword"
+            android:id="@+id/login_create_account"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Forgot Password?"
+            android:text="Create Account"
             android:textColor="@android:color/white"
             android:textSize="20sp"
             app:fontFamily="@font/nunito_extralight"
