@@ -53,7 +53,9 @@ public class CreatePassword extends AppCompatActivity {
                 }else if(phone.length() > 10){
                     phoneNumber.setError("Enter a valid number! (Hint:0712345678)");
                 }else{
-                    FETCH_URL="http://fairmontsinternationalschool.co.ke/fairmontsAPI/firstlogin.php?phone_no="+phone;
+                    FETCH_URL= BaseUrl.firstloginphp(phone);
+
+                            //"http://fairmontsinternationalschool.co.ke/fairmontsAPI/firstlogin.php?phone_no="+phone;
 
                     final ProgressDialog progressDialog=new ProgressDialog(CreatePassword.this);
                     progressDialog.setMessage("Just a moment...");

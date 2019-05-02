@@ -42,7 +42,7 @@ import io.paperdb.Paper;
 public class LoginActivity extends AppCompatActivity {
 
 
-    public static String LOGIN_URL;
+    private static String LOGIN_URL;
     MaterialEditText Phone, Password;
     Button Btnlogin;
     TextView CreateAccount;
@@ -106,7 +106,11 @@ public class LoginActivity extends AppCompatActivity {
         }else if(password.isEmpty()){
             Password.setError("Password is Required");
         }else{
-            LOGIN_URL="http://fairmontsinternationalschool.co.ke/fairmontsAPI/login.php?phone_no="+phone_no+"&password="+password+"";
+
+
+            LOGIN_URL= BaseUrl.loginactivity(phone_no,password);
+                    //BaseUrl.returnBase()+"api/login?phone_no="+phone_no+"&password="+password;
+            //{phone_no}&password={password}";   //"http://fairmontsinternationalschool.co.ke/fairmontsAPI/login.php?phone_no="+phone_no+"&password="+password+"";
             login();
         }
     }
@@ -124,9 +128,9 @@ public class LoginActivity extends AppCompatActivity {
                 progressDialog.dismiss();
                 try{
                     JSONArray jsonArray=response.getJSONArray("User");
-                    String parent_id=jsonArray.get(0).toString();
+                    String parent_id=jsonArray.get(1).toString();
                     Paper.book().write("Parent_id",parent_id);
-                    Toast.makeText(getApplicationContext(),"Login Successful!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Login Successful!",Toast.LENGTH_LONG).show(); //"Login Successful!"
                     startActivity(new Intent(LoginActivity.this,children_profiles.class));
                     finish();
                 }catch(JSONException e){

@@ -54,8 +54,13 @@ public class fees extends AppCompatActivity {
         Paper.init(this);
         String admission_no;
         admission_no=Paper.book().read("admission_no").toString();
-        FETCH_URL="http://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchfeesrecords.php?admission_no="+admission_no;
-        BALANCE_URL="http://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchfees.php?admission_no="+admission_no;
+
+        FETCH_URL=BaseUrl.fetchfeesrecords(admission_no);
+                //BaseUrl.returnBase()+"api/fetchfeesrecords/?id="+admission_no;
+                //"http://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchfeesrecords.php?admission_no="+admission_no;
+        BALANCE_URL=BaseUrl.fetchfees(admission_no);
+                //BaseUrl.returnBase()+"api/fetchfees/?id="+admission_no;
+                //"http://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchfees.php?admission_no="+admission_no;
 
         fetchfeebalance();
 
@@ -80,8 +85,10 @@ public class fees extends AppCompatActivity {
 
                             for(int i=0 ; i<jsonArray.length();i++){
                                 JSONObject object=jsonArray.getJSONObject(i);
-                                feesClassList.add(new feesClass("Date: "+object.getString("date"),"KES "+object.getString("amount")
-                                        ,"Receipt#: "+object.getString("receipt_no")));
+                                feesClassList.add(new feesClass("Date: "+object.getString("TxnDate"),"KES "+object.getString("payments")
+                                        ,"Receipt#: "+object.getString("ID"),"Description "+object.getString("Description")));
+
+                                //i added a description property to the class LOL, add kwa the list
                             }
 
                             adapter=new feesAdapter(fees.this,feesClassList);

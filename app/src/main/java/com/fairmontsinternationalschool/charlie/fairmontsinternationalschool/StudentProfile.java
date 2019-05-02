@@ -3,6 +3,7 @@ package com.fairmontsinternationalschool.charlie.fairmontsinternationalschool;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ import com.android.volley.ServerError;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -59,7 +61,10 @@ public class StudentProfile extends AppCompatActivity {
 
         Paper.init(this);
         String admission_no=Paper.book().read("admission_no").toString();
-        FETCH_URL="http://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchsingleprofile.php?admission_no="+admission_no;
+        FETCH_URL= BaseUrl.fetchsingleprofile(admission_no);
+                //BaseUrl.returnBase()+"api/fetchsingleprofile/?id="+admission_no;
+
+                //"http://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchsingleprofile.php?admission_no="+admission_no;
 
         final ProgressDialog progressDialog=new ProgressDialog(this);
         progressDialog.setMessage("Fetching student profiles.");
@@ -74,21 +79,25 @@ public class StudentProfile extends AppCompatActivity {
 
                 try {
                     JSONArray jsonArray= response.getJSONArray("child");
-                    student_names= jsonArray.get(1).toString();
-                    student_level= jsonArray.get(3).toString();
-                    student_system= jsonArray.get(4).toString();
-                    student_gender= jsonArray.get(5).toString();
-                    student_dob=jsonArray.get(6).toString();
-                    student_parent_name=jsonArray.get(7).toString();
-                    student_other_parent_name=jsonArray.get(8).toString();
-                    student_parent_id_no=jsonArray.get(9).toString();
-                    student_other_parent_id_no=jsonArray.get(10).toString();
-                    student_parent_phone=jsonArray.get(11).toString();
-                    student_other_parent_phone=jsonArray.get(12).toString();
-                    student_guardian_name=jsonArray.get(13).toString();
-                    student_guardian_contact=jsonArray.get(14).toString();
-                    student_guardian_id_no=jsonArray.get(15).toString();
-                    student_home_address=jsonArray.get(16).toString();
+
+                    student_names= jsonArray.get(0).toString();
+                     student_level= jsonArray.get(1).toString();
+                    student_system= jsonArray.get(2).toString();
+                    student_gender= jsonArray.get(3).toString();
+                    student_dob=jsonArray.get(4).toString();
+                     student_parent_name=jsonArray.get(5).toString();
+                     student_other_parent_name=jsonArray.get(6).toString();
+                     student_parent_id_no=jsonArray.get(7).toString();
+                     student_other_parent_id_no=jsonArray.get(8).toString();
+                     student_parent_phone=jsonArray.get(9).toString();
+                     student_other_parent_phone=jsonArray.get(10).toString();
+                    student_guardian_name=jsonArray.get(11).toString();
+                    student_guardian_contact=jsonArray.get(12).toString();
+                     student_guardian_id_no=jsonArray.get(13).toString();
+                     student_home_address=jsonArray.get(14).toString();
+
+                     //T
+
 
                     parent_name.setText(student_parent_name);
                     other_parent_name.setText(student_other_parent_name);
@@ -105,6 +114,7 @@ public class StudentProfile extends AppCompatActivity {
                     level.setText(student_level);
                     gender.setText(student_gender);
                     dob.setText(student_dob);
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -144,5 +154,7 @@ public class StudentProfile extends AppCompatActivity {
 
         studentNumber.setText(admission_no);
     }
+
+
 
 }

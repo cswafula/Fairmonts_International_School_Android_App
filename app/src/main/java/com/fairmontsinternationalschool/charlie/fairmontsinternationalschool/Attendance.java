@@ -91,7 +91,8 @@ public class Attendance extends AppCompatActivity {
                 progressDialog.show();
 
                 final String date= Integer.toString(year)+"-"+Integer.toString(month+1)+"-"+Integer.toString(dayOfMonth);
-                FETCH_URL="https://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchattendance.php?admission_no="+admission_no+"&date="+date;
+                FETCH_URL=BaseUrl.returnBase()+"/api/fetchattendance?admission_no="+admission_no+"&date="+date;
+                        //"https://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchattendance.php?admission_no="+admission_no+"&date="+date;
 
                 final JsonObjectRequest jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, FETCH_URL, null,
                         new Response.Listener<JSONObject>() {
@@ -106,19 +107,19 @@ public class Attendance extends AppCompatActivity {
                                     String Status=jsonArray.get(0).toString();
                                     switch (Status){
                                         case "Present":
-                                            teacher.setText(jsonArray.get(2).toString());
-                                            dates.setText(jsonArray.get(3).toString());
-                                            times.setText(jsonArray.get(4).toString());
-                                            broughtby.setText(jsonArray.get(5).toString());
-                                            uniformstatus.setText(jsonArray.get(6).toString());
-                                            personalitems.setText(jsonArray.get(7).toString());
-                                            comment.setText(jsonArray.get(8).toString());
-                                            sign_out_teacher.setText(jsonArray.get(9).toString());
-                                            sign_out_time.setText(jsonArray.get(10).toString());
-                                            taken_by.setText(jsonArray.get(11).toString());
-                                            sign_out_uniform.setText(jsonArray.get(12).toString());
-                                            sign_out_personalitems.setText(jsonArray.get(13).toString());
-                                            sign_out_comments.setText(jsonArray.get(14).toString());
+                                            teacher.setText(jsonArray.get(1).toString());
+                                            dates.setText(jsonArray.get(2).toString());
+                                            times.setText(jsonArray.get(3).toString());
+                                            broughtby.setText(jsonArray.get(4).toString());
+                                            uniformstatus.setText(jsonArray.get(5).toString());
+                                            personalitems.setText(jsonArray.get(6).toString());
+                                            comment.setText(jsonArray.get(7).toString());
+                                            sign_out_teacher.setText(jsonArray.get(8).toString());
+                                            sign_out_time.setText(jsonArray.get(9).toString());
+                                            taken_by.setText(jsonArray.get(10).toString());
+                                            sign_out_uniform.setText(jsonArray.get(11).toString());
+                                            sign_out_personalitems.setText(jsonArray.get(12).toString());
+                                            sign_out_comments.setText(jsonArray.get(13).toString());
 
                                             close.setVisibility(View.VISIBLE);
                                             select_date.setVisibility(View.GONE);

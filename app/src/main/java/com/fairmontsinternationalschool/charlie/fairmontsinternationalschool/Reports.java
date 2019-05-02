@@ -61,7 +61,8 @@ public class Reports extends AppCompatActivity {
 
         Paper.init(this);
         admission_no=Paper.book().read("admission_no").toString();
-        FETCH_URL="http://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchreports.php?admission_no="+admission_no;
+        FETCH_URL= BaseUrl.returnBase()+"api/fetchreports/?id="+admission_no;
+                //"http://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchreports.php?admission_no="+admission_no;
         searchlayout=findViewById(R.id.Diary_search_layout);
         previous_reports=findViewById(R.id.Diary_previous_reports);
         close=findViewById(R.id.Diary_search_close);
@@ -174,8 +175,8 @@ public class Reports extends AppCompatActivity {
 
                             for(int i=0 ; i<jsonArray.length();i++){
                                 JSONObject object=jsonArray.getJSONObject(i);
-                                reportsClassList.add(new ReportsClass(object.getString("date")
-                                        ,object.getString("report"),object.getString("teacher_comment"),object.getString("parent_comment")));
+                                reportsClassList.add(new ReportsClass(object.getString("Date")
+                                        ,object.getString("DayEntry"),object.getString("TeacherComment"),object.getString("ParenyComment")));
                             }
 
                             adapter=new ReportsAdapter(Reports.this,reportsClassList);
@@ -230,7 +231,11 @@ public class Reports extends AppCompatActivity {
         String start_date=from_date.getText().toString().trim();
         String end_date=to_date.getText().toString().trim();
 
-        SEARCH_URL="http://fairmontsinternationalschool.co.ke/fairmontsAPI/searchreports.php?admission_no="+admission_no+"&start_date="+start_date+"&end_date="+end_date;
+        SEARCH_URL=BaseUrl.searchreports(admission_no,start_date,end_date);
+
+                //BaseUrl.returnBase()+"api/searchreports?admission_no="+admission_no+"&start_date="+start_date+"&end_date="+end_date;
+
+                //"http://fairmontsinternationalschool.co.ke/fairmontsAPI/searchreports.php?admission_no="+admission_no+"&start_date="+start_date+"&end_date="+end_date;
 
         StringRequest stringRequest2=new StringRequest(Request.Method.GET, SEARCH_URL,
                 new Response.Listener<String>() {
@@ -245,8 +250,8 @@ public class Reports extends AppCompatActivity {
 
                             for(int i=0 ; i<jsonArray2.length();i++){
                                 JSONObject object=jsonArray2.getJSONObject(i);
-                                reportsClassList2.add(new ReportsClass(object.getString("date"),object.getString("report")
-                                        ,object.getString("teacher_comment"),object.getString("parent_comment")));
+                                reportsClassList2.add(new ReportsClass(object.getString("Date"),object.getString("DayEntry")
+                                        ,object.getString("TeacherComment"),object.getString("ParenyComment")));
                             }
 
                             adapter2=new ReportsAdapter(Reports.this,reportsClassList2);

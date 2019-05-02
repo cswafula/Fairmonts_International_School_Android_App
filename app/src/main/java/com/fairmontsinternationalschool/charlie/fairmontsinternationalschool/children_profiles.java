@@ -56,7 +56,11 @@ public class children_profiles extends AppCompatActivity {
 
         Paper.init(this);
         String Parent_id= Paper.book().read("Parent_id").toString();
-        FETCH_URL="http://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchprofiles.php?parent_id="+Parent_id;
+        String baseurl = Paper.book().read("Main_url").toString();
+        FETCH_URL=BaseUrl.returnBase()+"api/fetchprofiles/"+Parent_id;
+                //"http://fairmontsinternationalschool.co.ke/fairmontsAPI/fetchprofiles.php?parent_id="+Parent_id;
+
+
 
 
         profilesList= new ArrayList<>();
@@ -96,8 +100,10 @@ public class children_profiles extends AppCompatActivity {
 
                             for(int i=0 ; i<jsonArray.length();i++){
                                 JSONObject object=jsonArray.getJSONObject(i);
-                                profilesList.add(new profiles(object.getString("names"),object.getString("admission_no")
-                                        ,object.getString("level"),object.getString("system")));
+                                profilesList.add(new profiles(object.getString("Name"),object.getString("Admno")
+                                        ,object.getString("CName"),object.getString("CName")));
+
+                                //[names ,admission_no, level ,system] order of elements added
                             }
 
                             adapter=new profileAdapter(children_profiles.this,profilesList);

@@ -75,7 +75,9 @@ public class CreateAccount extends AppCompatActivity {
                 }else if(pass.length() < 6){
                     password.setError("Password is too short");
                 }else{
-                    FETCH_URL="https://fairmontsinternationalschool.co.ke/fairmontsAPI/addpassword.php?phone_no="+phone_no+"&password="+pass;
+                    FETCH_URL=BaseUrl.addpasswordphp(phone_no,pass);
+
+                            //"https://fairmontsinternationalschool.co.ke/fairmontsAPI/addpassword.php?phone_no="+phone_no+"&password="+pass;
                     execute();
                 }
             }
